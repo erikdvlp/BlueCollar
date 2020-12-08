@@ -1,5 +1,7 @@
 # BlueCollar
 
+BlueCollar is a service that connects hands-on workers (e.g. plumbers, electricians) with clients that need home services done. Workers are typically freelance but can be associated with a company as well. Clients post jobs that they need done. Workers can view open jobs and bid on them. Clients can also search for and view workers that specialize in their job type and message them. Through messaging, they can agree on a price and appointment. After the appointment, clients and workers can rate and review one another.
+
 ## Front-end
 
 ### Pages
