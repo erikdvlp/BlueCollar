@@ -7,6 +7,7 @@ BlueCollar is a service that connects hands-on workers (e.g. plumbers, electrici
 ![Image Design](/assets/BlueCollar-SystemDesign.svg)
 
 ## Front-end
+Front-end implemented in ReactJS.
 
 ### Pages
 * Home page
@@ -26,9 +27,18 @@ BlueCollar is a service that connects hands-on workers (e.g. plumbers, electrici
   * Displays all messaging conversations between clients and workers
 
 ## Back-end
+Back-end implemented in Java with Spring.
+
+### Micro-services
+* User management service
+* Job management service
+* Email notification service
+* Chat service
 
 ## Database
-### SQL
+Databases managed by MySQL and Cassandra.
+
+### Relational
 * User
   * user_id (int)
   * worker (boolean)
@@ -67,5 +77,6 @@ BlueCollar is a service that connects hands-on workers (e.g. plumbers, electrici
   * timestamp (datetime)
   * ip (varchar)
   * text (varchar)
-### NoSQL
+  
+### Non-relational
 * Chats
