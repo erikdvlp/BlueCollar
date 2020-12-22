@@ -1,4 +1,4 @@
-package com.bluecollar.jobmanagement;
+package com.bluecollar.jobmanagement.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
