@@ -32,6 +32,14 @@ Back-end implemented in Java with Spring.
 ### Micro-services
 * User management service
 * Job management service
+  * Create job
+    * Takes in field entries and creates a new job in the database
+  * Update job
+    * Takes in modifications (e.g. worker assigned, detail changed, status changed including finished) and updates a specified job in the database
+  * Delete job
+    * Deletes a specified job from the database
+  * Search jobs
+    * Takes in search parameters and returns a list of jobs from the database
 * Email notification service
 * Chat service
 
@@ -68,11 +76,11 @@ Databases managed by MySQL and Cassandra.
   * worker_id (int)
   * rating (int)
   * text (varchar)
-* Login
+* LoginAnalytics
   * user_id (int)
   * timestamp (datetime)
   * ip (varchar)
-* Search
+* SearchAnalytics
   * user_id (int)
   * timestamp (datetime)
   * ip (varchar)

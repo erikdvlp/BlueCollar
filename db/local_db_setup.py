@@ -1,3 +1,5 @@
+# Executes all SQL queries in create_tables.sql
+
 import sqlite3
 
 db = "local_db.db"
