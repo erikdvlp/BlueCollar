@@ -32,9 +32,15 @@ public class JobManagementController
 		@RequestParam(value = "workerId", required = false) Integer workerId,
 		@RequestParam(value = "jobCategoryId", required = false) Integer jobCategoryId,
 		@RequestParam(value = "text", required = false) String text,
-		@RequestParam(value = "status", required = false) String status)
+		@RequestParam(value = "status", required = false) Integer status)
 	{
-		//implement
+		Job j = jobService.getJobById(jobId);
+		if (clientId != null) j.setClientId(clientId);
+		if (workerId != null) j.setWorkerId(workerId);
+		if (jobCategoryId != null) j.setjobCategoryId(jobCategoryId);
+		if (text != null) j.setText(text);
+		if (status != null) j.setStatus(status);
+		jobService.saveOrUpdate(j);
 	}
 
 	@DeleteMapping("/deletejob")

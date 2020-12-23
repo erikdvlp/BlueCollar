@@ -15,4 +15,9 @@ public class JobService
 	{  
 		jobRepo.save(job);
 	}
+
+	public Job getJobById(int jobId)
+	{
+		return jobRepo.findById(jobId).get();
+	}
 }

@@ -21,6 +21,11 @@ public class Job
 		return this.jobId;
 	}
 
+	public void setJobId(int jobId)
+	{
+		this.jobId = jobId;
+	}
+
 	public int getClientId()
 	{
 		return this.clientId;
@@ -71,11 +76,23 @@ public class Job
 		this.status = status;
 	}
 
+	public Job() {}
+
 	public Job(int clientId, int jobCategoryId, String text)
 	{
 		this.setClientId(clientId);
 		this.setjobCategoryId(jobCategoryId);
 		this.setText(text);
 		this.setStatus(0);
+	}
+
+	public Job(int jobId, int clientId, int workerId, int jobCategoryId, String text, int status)
+	{
+		this.setJobId(jobId);
+		this.setClientId(clientId);
+		this.setWorkerId(workerId);
+		this.setjobCategoryId(jobCategoryId);
+		this.setText(text);
+		this.setStatus(status);
 	}
 }
