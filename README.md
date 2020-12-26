@@ -31,15 +31,15 @@ Back-end implemented in Java with Spring.
 
 ### Micro-services
 * User management service
+  * Create user
+  * Update user by ID
+  * Get user by ID
+  * Delete user by ID
 * Job management service
   * Create job
-    * Takes in field entries and creates a new job in the database
-  * Update job
-    * Takes in modifications (e.g. worker assigned, detail changed, status changed including finished) and updates a specified job in the database
-  * Delete job
-    * Deletes a specified job from the database
-  * Search jobs
-    * Takes in search parameters and returns a list of jobs from the database
+  * Update job by ID
+  * Delete job by ID
+  * Get jobs matching specified fields
 * Email notification service
 * Chat service
 

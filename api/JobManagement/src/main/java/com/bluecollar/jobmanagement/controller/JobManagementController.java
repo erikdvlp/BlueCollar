@@ -27,8 +27,8 @@ public class JobManagementController
 		jobService.saveOrUpdate(new Job(clientId, jobCategoryId, text));
 	}
 
-	@PatchMapping("/updatejob")
-	public void updateJob(
+	@PatchMapping("/updatejobbyid")
+	public void updateJobById(
 		@RequestParam(value = "jobId") Integer jobId,
 		@RequestParam(value = "clientId", required = false) Integer clientId,
 		@RequestParam(value = "workerId", required = false) Integer workerId,
@@ -45,8 +45,8 @@ public class JobManagementController
 		jobService.saveOrUpdate(j);
 	}
 
-	@DeleteMapping("/deletejob")
-	public void deleteJob(
+	@DeleteMapping("/deletejobbyid")
+	public void deleteJobById(
 		@RequestParam(value = "jobId") Integer jobId)
 	{
 		Job j = jobService.getJobById(jobId);
