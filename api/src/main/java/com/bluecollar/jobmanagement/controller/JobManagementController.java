@@ -1,5 +1,7 @@
 package com.bluecollar.jobmanagement.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.bluecollar.jobmanagement.model.Job;
 import com.bluecollar.jobmanagement.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,14 +46,20 @@ public class JobManagementController
 	}
 
 	@DeleteMapping("/deletejob")
-	public void deleteJob()
+	public void deleteJob(
+		@RequestParam(value = "jobId") Integer jobId)
 	{
-		//implement
+		Job j = jobService.getJobById(jobId);
+		jobService.delete(j);
 	}
 
-	@GetMapping("/getjobs")
-	public void getJobs()
+	@GetMapping("/getjobsmatching")
+	public List<Job> getJobsMatching(
+		@RequestParam(value = "jobCategoryId", required = false) Integer jobCategoryId,
+		@RequestParam(value = "status", required = false) Integer status)
 	{
-		//implement
+		List<Job> jobs = new ArrayList<Job>();
+		jobs = jobService.getJobsByJobCategoryIdAndStatus(jobCategoryId, status);
+		return jobs;
 	}
 }
