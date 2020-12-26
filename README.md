@@ -59,7 +59,7 @@ Databases managed by MySQL and Cassandra.
   * province (varchar)
   * country (varchar)
   * username (varchar)
-  * password_hash (varchar)
+  * pass_hash (varchar)
 * Job
   * job_id (int)
   * client_id (int)

@@ -32,7 +32,7 @@ public class JobService
 		return jobs;
 	}
 
-	public void saveOrUpdate(Job j)   
+	public void saveOrUpdate(Job j)
 	{
 		jobRepo.save(j);
 	}
