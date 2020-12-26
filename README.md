@@ -4,7 +4,7 @@ BlueCollar is a service that connects hands-on workers (e.g. plumbers, electrici
 
 ## System Design
 
-![Image Design](/assets/BlueCollar-SystemDesign.svg)
+![Image Design](/assets/system-design.svg)
 
 ## Front-end
 Front-end implemented in ReactJS.
@@ -41,7 +41,7 @@ Back-end implemented in Java with Spring.
   * Delete job by ID
   * Get jobs matching specified fields
 * Email notification service
-* Chat service
+* Messaging service
 
 ## Database
 Databases managed by MySQL and Cassandra.
