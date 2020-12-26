@@ -1,0 +1,4 @@
+port,service
+9090,API gateway
+8081,User management service
+8082,Job management service

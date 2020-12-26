@@ -18,7 +18,7 @@ public class JobManagementController
 	@Autowired  
 	JobService jobService;
 	
-	@PostMapping("/createjob")
+	@PostMapping("/jobmgmt/createjob")
 	public void createJob(
 		@RequestParam(value = "clientId") int clientId,
 		@RequestParam(value = "jobCategoryId") int jobCategoryId,
@@ -27,7 +27,7 @@ public class JobManagementController
 		jobService.saveOrUpdate(new Job(clientId, jobCategoryId, text));
 	}
 
-	@PatchMapping("/updatejobbyid")
+	@PatchMapping("/jobmgmt/updatejobbyid")
 	public void updateJobById(
 		@RequestParam(value = "jobId") Integer jobId,
 		@RequestParam(value = "clientId", required = false) Integer clientId,
@@ -45,7 +45,7 @@ public class JobManagementController
 		jobService.saveOrUpdate(j);
 	}
 
-	@DeleteMapping("/deletejobbyid")
+	@DeleteMapping("/jobmgmt/deletejobbyid")
 	public void deleteJobById(
 		@RequestParam(value = "jobId") Integer jobId)
 	{
@@ -53,7 +53,7 @@ public class JobManagementController
 		jobService.delete(j);
 	}
 
-	@GetMapping("/getjobsmatching")
+	@GetMapping("/jobmgmt/getjobsmatching")
 	public List<Job> getJobsMatching(
 		@RequestParam(value = "jobCategoryId", required = false) Integer jobCategoryId,
 		@RequestParam(value = "status", required = false) Integer status)

@@ -18,7 +18,7 @@ public class UserController
 	@Autowired
 	UserService userService;
 
-	@PostMapping("/createuser")
+	@PostMapping("/usermgmt/createuser")
 	public void createUser(
 		@RequestParam(value = "worker") boolean worker,
 		@RequestParam(value = "firstName") String firstName,
@@ -33,7 +33,7 @@ public class UserController
 		userService.saveOrUpdate(new User(worker, firstName, lastName, email, city, province, country, username, passHash));
 	}
 
-	@PatchMapping("/updateuserbyid")
+	@PatchMapping("/usermgmt/updateuserbyid")
 	public void updateUserById(
 		@RequestParam(value = "userId") Integer userId,
 		@RequestParam(value = "firstName", required = false) String firstName,
@@ -61,14 +61,14 @@ public class UserController
 		userService.saveOrUpdate(u);
 	}
 
-	@GetMapping("/getuserbyid")
+	@GetMapping("/usermgmt/getuserbyid")
 	public User getUserById(
 		@RequestParam(value = "userId") int userId)
 	{
 		return userService.getUserById(userId);
 	}
 
-	@DeleteMapping("/deleteuserbyid")
+	@DeleteMapping("/usermgmt/deleteuserbyid")
 	public void deleteUserById(
 		@RequestParam(value = "userId") int userId)
 	{
