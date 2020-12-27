@@ -28,8 +28,8 @@ body
 	height: 50vh;
 	background:
 		linear-gradient(
-		rgba(38, 0, 255, 0.0),
-		rgba(38, 0, 255, 0.3)
+		rgba(195, 0, 255, 0.1),
+		rgba(38, 0, 255, 0.5)
 		),
 		url('./assets/img/home-splash.jpg');
 	background-position: center;
@@ -99,4 +99,39 @@ navbar-nav a
 {
 	color: black;
 	text-decoration: none;
+}
+.loginSplash
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	flex-grow: 100;
+	background:
+		linear-gradient(
+		rgb(195, 0, 255, 0.75),
+		rgba(38, 0, 255, 0.75)
+		);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.loginWidget
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background: white;
+	padding: 30px;
+	border-radius: 3px;
+	font-size: 0.8em;
+}
+.loginField
+{
+	margin-bottom: 10px;
+	font-family: sans-serif;
+	width: 300px;
+	padding: 5px;
 }
