@@ -1,4 +1,5 @@
 port,service
-9090,API gateway
+3000,Front-end application
 8081,User management service
 8082,Job management service
+9090,API gateway
