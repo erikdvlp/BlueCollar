@@ -1,0 +1,137 @@
+@font-face
+{
+	font-family: 'Poppins';
+	src: url('./assets/font/Poppins-Regular.ttf');
+}
+@font-face
+{
+	font-family: 'Poppins-Light';
+	src: url('./assets/font/Poppins-Light.ttf');
+}
+@font-face
+{
+	font-family: 'Poppins-Bold';
+	src: url('./assets/font/Poppins-Medium.ttf');
+}
+body
+{
+	font-family: 'Poppins-Light', sans-serif
+}
+.homeSplash
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 50vh;
+	background:
+		linear-gradient(
+		rgba(195, 0, 255, 0.1),
+		rgba(38, 0, 255, 0.5)
+		),
+		url('./assets/img/home-splash.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.homeServices
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	width: 100vw;
+	margin-top: 2em;
+}
+hr
+{
+	border-top: 2px solid #007bff;
+	width: 45px;
+}
+h2
+{
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	font-size: 2.25em;
+}
+h3
+{
+	font-family: 'Poppins', sans-serif;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+h4
+{
+	font-family: 'Poppins-Bold', sans-serif;
+	font-size: 1em;
+}
+.homeSplash p
+{
+	color: white;
+	font-size: 1em;
+}
+.navbar-nav a, .navbar-nav button, .btn-primary
+{
+	font-size: 0.9em;
+}
+.navbar-brand
+{
+	font-family: 'Poppins', sans-serif;
+}
+.servDesc
+{
+	font-family: 'Poppins-Light', sans-serif;
+	font-size: 0.8em;
+}
+.homeServices .col-sm
+{
+	padding: 1em;
+}
+.servIcon
+{
+	margin-bottom: 15px;
+	width: 35px;
+}
+navbar-nav a
+{
+	color: black;
+	text-decoration: none;
+}
+.loginSplash
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	flex-grow: 100;
+	background:
+		linear-gradient(
+		rgb(195, 0, 255, 0.75),
+		rgba(38, 0, 255, 0.75)
+		);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.loginWidget
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background: white;
+	padding: 30px;
+	border-radius: 3px;
+	font-size: 0.8em;
+}
+.loginField
+{
+	margin-bottom: 10px;
+	font-family: sans-serif;
+	width: 300px;
+	padding: 5px;
+}

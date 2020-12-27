@@ -2,9 +2,12 @@
 
 BlueCollar is a service that connects hands-on workers (e.g. plumbers, electricians) with clients that need home services done. Workers are typically freelance but can be associated with a company as well. Clients post jobs that they need done. Workers can view open jobs and bid on them. Clients can also search for and view workers that specialize in their job type and message them. Through messaging, they can agree on a price and appointment. After the appointment, clients and workers can rate and review one another.
 
-## System Design
+## Preview
+![Home page screenshot](/assets/ss-home.png)
 
-![Image Design](/assets/BlueCollar-SystemDesign.svg)
+## System design
+
+![System design](/assets/system-design.svg)
 
 ## Front-end
 Front-end implemented in ReactJS.
@@ -12,7 +15,7 @@ Front-end implemented in ReactJS.
 ### Pages
 * Home page
   * Marketing splash screen to attract new users
-  * Link to log-in page at top-right
+  * Navigation bar including log-in button at top
 * Contact us page
   * Static contact information and/or email form
 * Log-in page
@@ -31,17 +34,17 @@ Back-end implemented in Java with Spring.
 
 ### Micro-services
 * User management service
+  * Create user
+  * Update user by ID
+  * Get user by ID
+  * Delete user by ID
 * Job management service
   * Create job
-    * Takes in field entries and creates a new job in the database
-  * Update job
-    * Takes in modifications (e.g. worker assigned, detail changed, status changed including finished) and updates a specified job in the database
-  * Delete job
-    * Deletes a specified job from the database
-  * Search jobs
-    * Takes in search parameters and returns a list of jobs from the database
+  * Update job by ID
+  * Delete job by ID
+  * Get jobs matching specified fields
 * Email notification service
-* Chat service
+* Messaging service
 
 ## Database
 Databases managed by MySQL and Cassandra.
@@ -59,7 +62,7 @@ Databases managed by MySQL and Cassandra.
   * province (varchar)
   * country (varchar)
   * username (varchar)
-  * password_hash (varchar)
+  * pass_hash (varchar)
 * Job
   * job_id (int)
   * client_id (int)
