@@ -1,16 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css';
-import './assets/css/index.css'
-import HomeSplash from './components/HomeSplash';
-import HomeNav from './components/HomeNav';
-import HomeServices from './components/HomeServices';
+import App from './App';
 
 ReactDOM.render(
 	<React.StrictMode>
-	<HomeNav />
-	<HomeSplash />
-	<HomeServices />
+		<App />
 	</React.StrictMode>,
 	document.getElementById('root')
 );
