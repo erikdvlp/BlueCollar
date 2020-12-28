@@ -1,5 +1,6 @@
 package com.bluecollar.usermanagement.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ public class User
 	private String city;
 	private String province;
 	private String country;
+	@Column(unique = true)
 	private String username;
 	private String passHash;
 
