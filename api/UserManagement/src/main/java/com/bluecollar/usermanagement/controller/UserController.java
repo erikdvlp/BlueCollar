@@ -1,17 +1,23 @@
 package com.bluecollar.usermanagement.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import com.bluecollar.usermanagement.model.User;
 import com.bluecollar.usermanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class UserController
 {
@@ -74,5 +80,31 @@ public class UserController
 	{
 		User u = userService.getUserById(userId);
 		userService.delete(u);
+	}
+
+	@PostMapping("/usermgmt/login")
+	public ResponseEntity login(
+		@RequestParam(value = "username") String username,
+		@RequestParam(value = "password") String password)
+	{
+		String passHash = "";
+		try { passHash = hashPassword(password); }
+		catch (NoSuchAlgorithmException e) { e.printStackTrace(); }
+		User u = userService.getUserByUsername(username);
+		if (u.getPassHash().equals(passHash))
+			return new ResponseEntity<>(HttpStatus.ACCEPTED); //202
+		else
+			return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE); //406
+	}
+
+	private String hashPassword(String password) throws NoSuchAlgorithmException
+	{
+		MessageDigest md = MessageDigest.getInstance("SHA-256");
+		byte[] hash = md.digest(password.getBytes(StandardCharsets.UTF_8));
+		BigInteger number = new BigInteger(1, hash);  
+		StringBuilder hexString = new StringBuilder(number.toString(16));  
+		while (hexString.length() < 32)
+			hexString.insert(0, '0');
+		return hexString.toString();
 	}
 }

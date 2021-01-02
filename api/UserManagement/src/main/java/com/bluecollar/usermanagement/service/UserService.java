@@ -18,6 +18,11 @@ public class UserService
 		return userRepo.findById(userId).get();
 	}
 
+	public User getUserByUsername(String username)
+	{
+		return userRepo.findByUsername(username);
+	}
+
 	public void saveOrUpdate(User u)
 	{
 		userRepo.save(u);
